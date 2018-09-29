@@ -1,7 +1,7 @@
 var celciusInput = document.querySelector('#celcius > input');
 var fahrenheitInput = document.querySelector('#fahrenheit > input');
 var kelvinInput = document.querySelector('#kelvin > input');
-
+const inputs = document.querySelectorAll("input");
 //Create function to round number//
 function roundto2(num){
     return Math.round(num*100)/100;
@@ -36,23 +36,33 @@ celciusInput.addEventListener("input",ConvertfromC);
 fahrenheitInput.addEventListener("input",ConvertfromF);
 kelvinInput.addEventListener("input",ConvertfromK);
 
-function Change(){
-    if (celciusInput <10) {
-    document.getElementsByClassName("t").style.background = "blue";
-}
-else if (celciusInput <20 && celciusInput>=10){
-    document.getElementsByClassName("t").style.background = "yellow";
-}
-else if(celciusInput <30 && celciusInput>=20){
-    document.getElementsByClassName("t").style.background = "orange";
-}
-else{
-    document.getElementsByClassName("t").style.background = "red";
-}
-}
-var input = document.getElementsByClassName("t");
-input.addEventListener("input", Change);
+function Change() {
+  const celciusValue = parseFloat(celciusInput.value);
 
+  if (celciusValue < 10) {
+    inputs.forEach(div => {
+      div.style.backgroundColor = "lightblue";
+    });
+  } else if (celciusValue < 20 && celciusValue >= 10) {
+    inputs.forEach(div => {
+      div.style.backgroundColor = "yellow";
+    });
+  } else if (celciusValue < 30 && celciusValue >= 20) {
+    inputs.forEach(div => {
+        div.style.backgroundColor = "orange";
+      });
+}
+    else if (celciusValue < 80 && celciusValue >= 30) {
+    inputs.forEach(div => {
+        div.style.backgroundColor = "red";
+      });
+  } else {
+    inputs.forEach(div => {
+        div.style.backgroundColor = "grey";
+      });
+  }
+}
 
-
-
+inputs.forEach(input => {
+    input.addEventListener("input", Change);
+})

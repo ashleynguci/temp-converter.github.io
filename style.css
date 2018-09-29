@@ -31,5 +31,7 @@ border-style: ridge;
 ::placeholder{
 color: mistyrose;
 background:#aad7d1 ;
+width: 100%;
 }
+
 
