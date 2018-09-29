@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Mali');
+*{
+    padding : 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: mistyrose;
+}
+
+div{
+    height: 33.33vh;
+}
+input[type = number]{
+    width: 100%;
+    height: 100%;
+    background: lightblue;
+    outline: none;
+    color: pink;
+    font-size: 10em;
+    text-align: center;
+    border: 0;
+    font-family: Mali;
+}
+
+#fahrenheit{
+    border-top: 5px ridge white;
+    border-bottom: 5px ridge white;
+border-style: ridge;
+}
+::placeholder{
+color: mistyrose;
+background:#aad7d1 ;
+}
+
